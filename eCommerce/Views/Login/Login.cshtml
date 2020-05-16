@@ -1,0 +1,129 @@
+﻿@model eCommerce.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Login"))
+{
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        @*<title>Shree Maruti Courier - Login</title>
+            <meta name="viewport" content="width=device-width" />
+
+
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+            <link href="../Content/Theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+            <link href="../Content/Theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+            <link href="../Content/Theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+            <link href="../Content/Theme/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+            <link href="../Content/Theme/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+
+            <link href="../Content/Theme/assets/pages/css/login-3.min.css" rel="stylesheet" type="text/css" />
+            <link href="../Content/myStyle.css" rel="stylesheet" />
+            <link href="~/Content/Mystyle.css" rel="stylesheet" />
+
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">*@
+
+
+        <title>Courier365Cloud</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="description" content="Courier365Cloud, Citta Solutions">
+        <meta name="author" content="Citta Solutions">
+        <link rel="icon" href="~/Content/AdminTheme/assets/images/favicon.png" type="image/png">
+
+
+        <!-- VENDOR CSS -->
+        <link rel="stylesheet" href="~/Content/AdminTheme/assets/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Content/AdminTheme/assets/vendor/font-awesome/css/font-awesome.min.css">
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="~/Content/AdminTheme/css/main.css">
+        <link rel="stylesheet" href="~/Content/AdminTheme/css/color_skins.css">
+        <link href="~/Content/AdminTheme/css/custom-bootstrap-margin-padding-font-align.css" rel="stylesheet" />
+        <style>
+            .field-icon {
+                float: right;
+                margin-left: -25px;
+                padding-top: 13px;
+                position: relative;
+                margin-right: 10px;
+                z-index: 2;
+            }
+        </style>
+    </head>
+    <body class="theme-purple">
+
+        <div id="wrapper">
+            <div class="vertical-align-wrap">
+                <div class="vertical-align-middle auth-main">
+                    <div class="auth-box">
+                       
+                        <div class="card">
+                            <div class="header">
+                                <p class="lead">Sign in to your account</p>
+                            </div>
+
+
+                            <div class="body col-md-6 ">
+                                <form class="form-auth-small">
+                                   
+                                    <div class="form-group input-group-append col-md 6">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        <label for="nam" class="control-label sr-only">Username</label>
+                                        @Html.TextBoxFor(o => o.Username, new { @maxlength = "100", @id = "nam", @class = "form-control", @placeholder = "Username" })
+                                        @Html.ValidationMessageFor(o => o.Username, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group input-group-append">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <label for="pwd" class="control-label sr-only">Password</label>
+                                        @Html.PasswordFor(o => o.Password, new { @maxlength = "100", @id = "pwd", @name = "password", @class = "form-control", @placeholder = "Password" })
+                                        @Html.ValidationMessageFor(o => o.Password, "", new { @class = "text-danger" })
+                                        <span toggle="#pwd" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                    </div>
+
+                                    <input value="Sign In" type="submit" class="btn btn-primary btn-lg btn-block" />
+                                    <br />
+                                    <h6><a href="http://localhost:2005/Home/ForgotPassword">Forgot Password</a></h6>
+                                    @*<div class="bottom pt-10">
+                                            <span class="helper-text m-b-10">
+                                                <i class="fa fa-lock"></i>
+                                                <a href="@Url.Action("ForgotPassword", "Home")" class="text-muted" id="forget-password">Forgot password?</a>
+                                            </span>
+
+                                        </div>*@
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script>
+            $(".toggle-password").click(function () {
+
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+        </script>
+    </body>
+</html>
+}
+
