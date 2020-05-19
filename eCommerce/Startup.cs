@@ -22,9 +22,7 @@ namespace eCommerce
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDistributedMemoryCache();
-            services.AddSession(options => {
-                options.IdleTimeout = TimeSpan.FromMinutes(1);//You can set Time   
-            });
+            services.AddSession();
 
             services.AddMvc();
         }

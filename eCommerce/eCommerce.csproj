@@ -10,11 +10,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
     <PackageReference Include="Microsoft.Web.SessionState.SqlInMemory" Version="1.0.2" />
+    <PackageReference Include="RestSharp" Version="106.11.3" />
     <PackageReference Include="System.Text.Encodings.Web" Version="4.7.1" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eCommerceML.Model\eCommerceML.Model.csproj" />
   </ItemGroup>
 
 </Project>

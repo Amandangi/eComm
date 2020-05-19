@@ -12,8 +12,12 @@ namespace eCommerce.Controllers
 {
     public class LoginController : Controller
     {
-        string username = string.Empty;
-        string password = string.Empty;
+         [BindProperty]
+        public string Username { get; set;  }
+
+        [BindProperty]
+        public string Password{ get; set; }
+
 
         public IActionResult Index()
         {
